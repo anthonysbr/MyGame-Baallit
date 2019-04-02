@@ -4,6 +4,7 @@ window.onload = function () {
         game.startGame();
         document.getElementById("start-button").style.display="none";
         document.getElementById("animation").style.display="none";
+        document.getElementById("Game").style.display="flex";
         
 
     };

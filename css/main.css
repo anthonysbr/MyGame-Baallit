@@ -1,0 +1,143 @@
+* {
+    margin: 0
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: #FF9800;
+    overflow: hidden;
+    /* width: 100wh;
+	height: 90vh; */
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 500% 500%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: #FF9800;
+    overflow: hidden
+} */
+
+#Game {
+    display: none;
+    justify-content: center;
+}
+
+#canvas {
+    display: flex;
+    background: #fff;
+}
+
+.btn-item {
+    text-decoration: none;
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+    padding: 25px 40px 20px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: 'roboto';
+    letter-spacing: 1.1rem;
+    text-transform: uppercase;
+    transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-item:before, .btn-item:after {
+    content: '';
+    position: absolute;
+    transition: inherit;
+    z-index: -1;
+}
+
+.btn-item:hover {
+    color: #FF9800;
+    transition-delay: .6s;
+}
+
+.btn-item:hover:before {
+    transition-delay: 0s;
+}
+
+.btn-item:hover:after {
+    background: #fff;
+    transition-delay: .4s;
+}
+
+.btn-effect:before, .btn-effect:after {
+    top: 0;
+    width: 0;
+    height: 100%;
+}
+
+.btn-effect:before {
+    left: 0;
+    border: 1px solid #fff;
+    border-left: 0;
+    border-right: 0;
+}
+
+.btn-effect:after {
+    right: 0;
+    top: 1px;
+}
+
+.btn-effect:hover:before, .btn-effect:hover:after {
+    width: 100%;
+}
