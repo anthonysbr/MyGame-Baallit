@@ -29,7 +29,7 @@ class Spikes {
 
         if (e.keyCode == '37') {
             this.keyState.left = true;
-            // this.rotation -= (Math.PI / 360);
+            
         }
         else if (e.keyCode == '39') {
             this.keyState.right = true;
@@ -52,7 +52,9 @@ class Spikes {
     }
     if(this.keyState.right){
         this.rotation += (Math.PI / 180);
+        
     }
+    
     }
 
 

@@ -12,6 +12,7 @@ class Ball {
     this.color = "#0095DD";
   }
 
+
     drawBall() {
       this.ctx.beginPath();
       this.ctx.arc(this.x, this.y, this.ballRadius, 0, Math.PI * 2);
