@@ -1,5 +1,5 @@
 class Ball {
-  constructor(ctx) {
+  constructor(ctx,perimetro) {
 
     this.canvas = document.getElementById("canvas");
     this.ctx = canvas.getContext("2d");
@@ -10,29 +10,40 @@ class Ball {
     this.dx = 2;
     this.dy = -2;
     this.color = "#0095DD";
+    this.centerX = canvas.width / 2;
+    this.centerY = canvas.height / 2;
+    this.circle = perimetro;
   }
 
 
-    drawBall() {
-      this.ctx.beginPath();
-      this.ctx.arc(this.x, this.y, this.ballRadius, 0, Math.PI * 2);
-      this.ctx.fillStyle = this.color;
-      this.ctx.fill();
-      this.ctx.closePath();
-    }
+  drawBall() {
+    this.ctx.beginPath();
+    this.ctx.arc(this.centerX, this.centerY, this.ballRadius, 0, Math.PI * 2);
+    this.ctx.fillStyle = this.color;
+    this.ctx.fill();
+    this.ctx.closePath();
+    
+  }
 
-    ballMove() {
-      this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-      this.drawBall();
-      if (this.x + this.dx > canvas.width - this.ballRadius || this.x + this.dx < this.ballRadius) {
-        this.dx = -this.dx;
-        this.color = 'red' + Math.round(Math.random() * 15000000).toString(16);
-      }
-      if (this.y + this.dy > canvas.height - this.ballRadius || this.y + this.dy < this.ballRadius) {
-        this.dy = -this.dy;
-        this.color = 'green' + Math.round(Math.random() * 15000000).toString(16);
-      }
-      this.x += this.dx;
-      this.y += this.dy;
+
+  ballMove() {
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    this.drawBall();
+    var distance = Math.sqrt ((this.circle.cx - this.centerX) * (this.circle.cx - this.centerX) + (this.circle.cy - this.centerY) * (this.circle.cy - this.centerY));
+    console.log(distance);
+    if (distance <= this.circle.radius - this.ballRadius) {
+    // console.log("dentro")
+    this.centerX += this.dx;
+    this.centerY += this.dy;
+  }else {
+    // console.log("cambio")
+    this.dx = -this.dx;
+    this.dy = -this.dy;
+    this.centerX += this.dx;
+    this.centerY += this.dy;
+
     }
   }
+  
+}
+
