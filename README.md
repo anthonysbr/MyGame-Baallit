@@ -1,5 +1,7 @@
 # MyGame-Ball-it-
 
+![image](https://user-images.githubusercontent.com/47228958/55633461-b691fe00-57bc-11e9-9541-65e2ec0d3f64.png)
+
 # Project Title
 
 Baallit.
