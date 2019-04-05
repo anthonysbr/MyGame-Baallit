@@ -1,6 +1,6 @@
 window.onload = function () {
 // function([string1, string2],target id,[color1,color2])    
-tecleandoText(['Game over.', 'Looser.'], 'text', ['white', 'white']);
+tecleandoText(['You loose...', 'Looser.'], 'text', ['white', 'white']);
 
 function tecleandoText(words, id, colors) {
     if (colors === undefined) colors = ['#fff'];

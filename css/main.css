@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
 * {
     margin: 0
 }
@@ -19,6 +21,7 @@ body {
     -moz-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
 }
+
 
 @-webkit-keyframes Gradient {
     0% {

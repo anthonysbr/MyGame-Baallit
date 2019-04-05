@@ -1,5 +1,5 @@
 window.onload = function () {
-    var spikes = [new Spikes(0),new Spikes(0.4),new Spikes(2),new Spikes(2.4),new Spikes(2.8),new Spikes(3,4)];
+    var spikes = [new Spikes(0),new Spikes(0.4),new Spikes(2),new Spikes(2.4),new Spikes(2.8),new Spikes(3.4),new Spikes(4.8)];
     var intervalID = "";
     var counter = 0;
     var clearScreen = function () {
@@ -10,7 +10,7 @@ window.onload = function () {
         right: false,
     }
     var curBall=null
-    var arrAng = [{a : 0, x: 0, y: 0},{a: 0.4, x: 0, y: 0},{a: 2, x: 0, y: 0},{a: 2.4, x: 0, y: 0},{a: 2.8, x: 0, y: 0},{a: 3.4, x: 0, y: 0}]
+    var arrAng = [{a : 0, x: 0, y: 0},{a: 0.4, x: 0, y: 0},{a: 2, x: 0, y: 0},{a: 2.4, x: 0, y: 0},{a: 2.8, x: 0, y: 0},{a: 3.4, x: 0, y: 0},{a: 4.8, x: 0, y: 0}]
     document.getElementById("start-button").onclick = function () {
         document.getElementById("start-button").style.display = "none";
         document.getElementById("animation").style.display = "none";
@@ -133,14 +133,15 @@ window.onload = function () {
                 arrAng.forEach(element=>{
                     collisionDetection(element)
                 })
-            }, 1000 / 160);
+            }, 1000 / 170);
         }
          collisionDetection= (element) =>{
              var dx = element.x - curBall.x;
              var dy = element.y - curBall.y;
              var distance = Math.sqrt(dx*dx+dy*dy);
              if (distance < 10 + curBall.r){
-                 console.log (true);
+                //  console.log (true);
+                window.location.href = '../pkt.html'
              }
             //  console.log(element)
             //  var dx = curBall.x - Math.max(element.x, Math.min(curBall.x, element.x + 15))
