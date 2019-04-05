@@ -1,115 +1,51 @@
 class Spikes {
-    constructor(ctx) {
+    constructor(ang) {
+        this.ang = ang
+        this.canvas = document.getElementById("canvas");
+        this.ctx = canvas.getContext("2d");
         this.w = window.innerWidth;
         this.h = window.innerHeight;
         this.w2 = this.w / 2
         this.h2 = this.h / 2
-        this.cx = this.w2;
-        this.cy = this.h2;
         this.rectWidth = 10;
         this.rectHeight = 15;
         this.rotation = 0;
-        this.ctx = ctx;
-        this.keyState = {
-            left: false,
-            right: false,
-
-        }
+        this.x = this.rectWidth / 4 + 190;
+        this.y = this.rectHeight / 4;
 
     }
 
     draw() {
-        this.ctx.beginPath();
-        this.ctx.translate(this.cx, this.cy);
-        this.ctx.rotate(this.rotation);
-        this.ctx.strokeRect(-this.rectWidth / 2 + 190, -this.rectHeight / 2, this.rectWidth, 5);
-        this.ctx.restore();
-        this.ctx.save();
-        this.ctx.closePath();
+            this.ctx.beginPath();
+            this.ctx.save();
+            this.ctx.fillStyle = "#23A6D5";
+            this.ctx.translate(200,200);
+            this.ctx.rotate(this.rotation + this.ang);
+            this.ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
+            this.ctx.fill();
+            // this.ctx.strokeRect(this.x, this.y, this.rectWidth, this.rectHeight);
+            this.ctx.closePath();
+            this.ctx.restore();
+        }
+        // drawSpike(0)
+        // drawSpike(0.4)
+        // drawSpike(2)
+        // drawSpike(2.4)
+        // drawSpike(2.8)
+        // drawSpike(3.4)
 
-        //Segundo
-        this.ctx.beginPath();
-        this.ctx.translate(this.cx, this.cy);
-        this.ctx.rotate(0.4 + this.rotation);
-        // this.ctx.strokeStyle = "red";
-        this.ctx.strokeRect(-this.rectWidth / 2 + 190, -this.rectHeight / 2, this.rectWidth, 5);
-        this.ctx.restore();
-        this.ctx.save();
-        this.ctx.closePath();
+    
 
-        //Tercero
-        this.ctx.beginPath();
-        this.ctx.translate(this.cx, this.cy);
-        this.ctx.rotate(2 + this.rotation);
-        // this.ctx.strokeStyle = "red";
-        this.ctx.strokeRect(-this.rectWidth / 2 + 190, -this.rectHeight / 2, this.rectWidth, 5);
-        this.ctx.restore();
-        this.ctx.save();
-        this.ctx.closePath();
+    moveL() {
 
-        //Cuarto
-        this.ctx.beginPath();
-        this.ctx.translate(this.cx, this.cy);
-        this.ctx.rotate(2.4 + this.rotation);
-        // this.ctx.strokeStyle = "red";
-        this.ctx.strokeRect(-this.rectWidth / 2 + 190, -this.rectHeight / 2, this.rectWidth, 5);
-        this.ctx.restore();
-        this.ctx.save();
-        this.ctx.closePath();
-
-        //Quinto
-        this.ctx.beginPath();
-        this.ctx.translate(this.cx, this.cy);
-        this.ctx.rotate(2.8 + this.rotation);
-        // this.ctx.strokeStyle = "red";
-        this.ctx.strokeRect(-this.rectWidth / 2 + 190, -this.rectHeight / 2, this.rectWidth, 5);
-        this.ctx.restore();
-        this.ctx.save();
-        this.ctx.closePath();
-
-
-        //Sexto
-        this.ctx.beginPath();
-        this.ctx.translate(this.cx, this.cy);
-        this.ctx.rotate(3.4 + this.rotation);
-        // this.ctx.strokeStyle = "red";
-        this.ctx.strokeRect(-this.rectWidth / 2 + 190, -this.rectHeight / 2, this.rectWidth, 5);
-        this.ctx.restore();
-        this.ctx.save();
-        this.ctx.closePath();
+            this.rotation -= (Math.PI / 180);
 
     }
+    moveR() {
 
-    move() {
-        document.onkeydown = (e) => {
-
-            if (e.keyCode == '37') {
-                this.keyState.left = true;
-
-            }
-            else if (e.keyCode == '39') {
-                this.keyState.right = true;
-                // this.rotation += Math.PI / 360;
-            }
-        }
-        document.onkeyup = (e) => {
-
-            if (e.keyCode == '37') {
-                this.keyState.left = false;
-                // this.rotation -= (Math.PI / 360);
-            }
-            else if (e.keyCode == '39') {
-                this.keyState.right = false;
-                // this.rotation += Math.PI / 360;
-            }
-        }
-        if (this.keyState.left) {
-            this.rotation -= (Math.PI / 180);
-        }
-        if (this.keyState.right) {
             this.rotation += (Math.PI / 180);
 
-        }
+        
 
     }
 

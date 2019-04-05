@@ -1,0 +1,117 @@
+
+/* #pelota {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: rgb(222, 52, 125);
+    background: linear-gradient(0deg, rgba(222, 52, 125, 1) 10%, rgba(181, 40, 153, 1) 88%);
+}
+
+.salto {
+    -webkit-animation: salto 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+    animation: salto 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+@-webkit-keyframes salto {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes salto {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-80px);
+        transform: translateY(-80px);
+    }
+} */
+
+/* Pelota1 */
+#pelota {
+    background: #ffffff;
+    position: absolute;
+    bottom: 0%;
+    top: 10%;
+    left: 58%;
+    margin-left: -50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    animation: bounce 1s linear infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: none;
+      animation-timing-function: cubic-bezier(.44,0,.89,.17);
+    }
+    
+    50% {
+      transform: translateY(255px) scaleX(1.06);
+      animation-timing-function: cubic-bezier(.18,.9,.45,1);
+    }
+  }
+  
+  /* Pelota izq */
+  
+  #ball {
+    background: #ffffff;
+    position: absolute;
+    bottom: 0%;
+    left: 40%;
+    top: 10%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    animation: bounce 1.3s linear infinite;
+  }
+  
+  @keyframes bounce2 {
+    0%, 100% {
+      transform: none;
+      animation-timing-function: cubic-bezier(.44,0,.89,.17);
+    }
+    
+    50% {
+      transform: translateY(800px) scaleX(1.06);
+      animation-timing-function: cubic-bezier(.18,.9,.45,1);
+    }
+  }
+  
+  /* Pelota medio */
+  
+  #miniball {
+    background: #ffffff;
+    position: absolute;
+    bottom: 0%;
+    left: 48%;
+    top: 10%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    animation: bounce 1.6s linear infinite;
+  }
+  
+  @keyframes bounce2 {
+    0%, 100% {
+      transform: none;
+      animation-timing-function: cubic-bezier(.44,0,.89,.17);
+    }
+    
+    50% {
+      transform: translateY(800px) scaleX(1.06);
+      animation-timing-function: cubic-bezier(.18,.9,.45,1);
+    }
+  }
