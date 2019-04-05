@@ -2,11 +2,11 @@
 
 # Project Title
 
-Ball it.
+Baallit.
 
 ## About the project
 
-Ball it's a very entertaining game in which you will not get bored.
+Baallit it's a very entertaining game in which you will not get bored.
 
 ### How to play
 
